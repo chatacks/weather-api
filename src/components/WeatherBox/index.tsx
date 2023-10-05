@@ -6,13 +6,13 @@ function WeatherBox() {
     <>
       <div className="weather-box">
         <img src="" alt="" />
-        <p className="temperature">temp</p>
-        <p className="description">desc</p>
+        <p className="temperature" />
+        <p className="description" />
       </div>
 
       <div className="weather-details">
         <div className="humidity">
-          <FaWater />
+          <FaWater className="icon-weather-box" />
           <div className="text">
             <span />
             <p>Humidity</p>
@@ -20,7 +20,7 @@ function WeatherBox() {
         </div>
 
         <div className="wind">
-          <LuWind />
+          <LuWind className="icon-weather-box" />
           <div className="text">
             <span />
             <p>Wind Speed</p>

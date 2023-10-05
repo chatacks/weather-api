@@ -1,13 +1,12 @@
 import { FaLocationDot } from 'react-icons/fa6';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import notFound from '../../assets/404.png';
-import './searchBox.css';
 
 function SearchBar() {
   return (
     <>
       <div className="search-box">
-        <FaLocationDot />
+        <FaLocationDot className="icon-dot-location" />
         <input type="text" placeholder="Digite sua localização" />
         <button>
           <BiSearchAlt2 />

@@ -1,6 +1,5 @@
 import SearchBar from '../SearchBar';
 import WeatherBox from '../WeatherBox';
-import './container.css';
 
 function Container() {
   return (
