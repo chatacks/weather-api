@@ -2,15 +2,25 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import notFound from '../../assets/404.png';
 
-function SearchBar() {
+type SearchBarProps = {
+  onChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+function SearchBar({ onChange }: SearchBarProps) {
   return (
     <>
       <div className="search-box">
         <FaLocationDot className="icon-dot-location" />
-        <input type="text" placeholder="Digite sua localização" />
-        <button>
-          <BiSearchAlt2 />
-        </button>
+        <form>
+          <input
+            onChange={ onChange }
+            type="text"
+            placeholder="Digite sua localização"
+          />
+          <button>
+            <BiSearchAlt2 />
+          </button>
+        </form>
       </div>
 
       <div className="not-found">
