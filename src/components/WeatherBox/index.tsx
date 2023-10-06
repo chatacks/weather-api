@@ -1,17 +1,21 @@
 import { FaWater } from 'react-icons/fa6';
 import { LuWind } from 'react-icons/lu';
+import { ObjectWeather } from '../../type';
 
 type WeatherBoxProps = {
-  active: boolean;
+  data: ObjectWeather
 };
 
-function WeatherBox({ active }: WeatherBoxProps) {
+function WeatherBox({ data }: WeatherBoxProps) {
   return (
     <>
-      <div className={ active ? 'fadeIn' : 'weather-box' }>
+      <div className="weather-box">
         <img src="" alt="" />
-        <p className="temperature" />
-        <p className="description" />
+        {/* eslint-disable-next-line no-unsafe-optional-chaining */}
+        <p className="temperature">
+          {`${parseInt((data?.main.temp - 273.15).toFixed(2))} °C`}
+        </p>
+        <p className="description">{data?.weather[0].description}</p>
       </div>
 
       <div className="weather-details">
