@@ -6,7 +6,22 @@ import { ObjectWeather } from '../../type';
 
 function Container() {
   const [inputValue, setInputValue] = useState('');
-  const [dataWeather, setDataWeather] = useState<ObjectWeather>();
+  const [dataWeather, setDataWeather] = useState<ObjectWeather>({
+    name: '',
+    cod: 0,
+    main: {
+      humidity: 0,
+      temp: 0,
+    },
+    weather: [{
+      description: '',
+      main: 'Clear' || 'Cloud' || 'Mist' || 'Rain' || 'Snow',
+    }],
+    wind: {
+      speed: 0,
+    },
+  });
+
   const [style, setStyle] = useState('container2');
 
   const handleInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,16 +32,12 @@ function Container() {
     const data = await getWeather(inputValue);
     console.log(data);
     setDataWeather(data);
-  };
-
-  const changeStyle = () => {
     setStyle('container');
   };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     requestApi();
-    changeStyle();
   };
 
   return (
@@ -37,7 +48,6 @@ function Container() {
       />
       <WeatherBox
         data={ dataWeather }
-        // active={ active }
       />
     </div>
   );

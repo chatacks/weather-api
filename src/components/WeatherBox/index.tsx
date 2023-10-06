@@ -3,7 +3,7 @@ import { LuWind } from 'react-icons/lu';
 import { ObjectWeather } from '../../type';
 
 type WeatherBoxProps = {
-  data: ObjectWeather
+  data: ObjectWeather;
 };
 
 function WeatherBox({ data }: WeatherBoxProps) {
@@ -11,11 +11,10 @@ function WeatherBox({ data }: WeatherBoxProps) {
     <>
       <div className="weather-box">
         <img src="" alt="" />
-        {/* eslint-disable-next-line no-unsafe-optional-chaining */}
         <p className="temperature">
-          {`${parseInt((data?.main.temp - 273.15).toFixed(2))} °C`}
+          {`${data.main.temp} °C`}
         </p>
-        <p className="description">{data?.weather[0].description}</p>
+        <p className="description">{data.weather[0].description}</p>
       </div>
 
       <div className="weather-details">
