@@ -1,10 +1,14 @@
 import { FaWater } from 'react-icons/fa6';
 import { LuWind } from 'react-icons/lu';
 
-function WeatherBox() {
+type WeatherBoxProps = {
+  active: boolean;
+};
+
+function WeatherBox({ active }: WeatherBoxProps) {
   return (
     <>
-      <div className="weather-box">
+      <div className={ active ? 'fadeIn' : 'weather-box' }>
         <img src="" alt="" />
         <p className="temperature" />
         <p className="description" />

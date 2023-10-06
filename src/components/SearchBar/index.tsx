@@ -4,14 +4,15 @@ import notFound from '../../assets/404.png';
 
 type SearchBarProps = {
   onChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
-function SearchBar({ onChange }: SearchBarProps) {
+function SearchBar({ onChange, onSubmit }: SearchBarProps) {
   return (
     <>
       <div className="search-box">
         <FaLocationDot className="icon-dot-location" />
-        <form>
+        <form onSubmit={ onSubmit }>
           <input
             onChange={ onChange }
             type="text"
