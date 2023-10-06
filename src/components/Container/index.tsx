@@ -1,38 +1,43 @@
 import { useState } from 'react';
+import { ObjectWeather } from '../../type';
 import SearchBar from '../SearchBar';
 import WeatherBox from '../WeatherBox';
 import getWeather from '../../services/getWeatherApi';
-import { ObjectWeather } from '../../type';
+import notFound from '../../assets/404.png';
 
 function Container() {
   const [inputValue, setInputValue] = useState('');
+  const [style, setStyle] = useState('container2');
+  const [validate, setValidate] = useState(false);
   const [dataWeather, setDataWeather] = useState<ObjectWeather>({
+    cod: 404,
     name: '',
-    cod: 0,
     main: {
       humidity: 0,
       temp: 0,
     },
     weather: [{
       description: '',
-      main: 'Clear' || 'Cloud' || 'Mist' || 'Rain' || 'Snow',
+      main: 'Clear' || 'Clouds' || 'Mist' || 'Rain' || 'Snow',
     }],
     wind: {
       speed: 0,
     },
   });
 
-  const [style, setStyle] = useState('container2');
-
   const handleInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(target.value);
   };
 
   const requestApi = async () => {
-    const data = await getWeather(inputValue);
-    console.log(data);
-    setDataWeather(data);
-    setStyle('container');
+    try {
+      const data = await getWeather(inputValue);
+      setDataWeather(data);
+      setStyle('container');
+      setValidate(false);
+    } catch (error) {
+      setValidate(true);
+    }
   };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -46,9 +51,21 @@ function Container() {
         onChange={ handleInputChange }
         onSubmit={ handleFormSubmit }
       />
-      <WeatherBox
-        data={ dataWeather }
-      />
+      {validate
+        ? (
+          <div
+            className="
+            container
+            weather-box
+            weather-details
+            not-found fadeIn"
+          >
+            <img src={ notFound } alt="Not Found 404" />
+            <p>Opa! Localização inválida. Insira uma localização válida.</p>
+          </div>)
+        : <WeatherBox
+            data={ dataWeather }
+        />}
     </div>
   );
 }

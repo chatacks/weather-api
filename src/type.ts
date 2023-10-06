@@ -1,8 +1,8 @@
-type IconType = 'Clear' | 'Cloud' | 'Mist' | 'Rain' | 'Snow';
+type IconType = 'Clear' | 'Clouds' | 'Mist' | 'Rain' | 'Snow';
 
 export type ObjectWeather = {
-  name: string;
   cod: number;
+  name: string;
   main: MainType;
   weather: WeatherType[];
   wind: WindType;
