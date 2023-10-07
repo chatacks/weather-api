@@ -9,6 +9,7 @@ function Container() {
   const [inputValue, setInputValue] = useState('');
   const [style, setStyle] = useState('container2');
   const [validate, setValidate] = useState(false);
+  const [locNotFound, setLocNotFound] = useState('');
   const [dataWeather, setDataWeather] = useState<ObjectWeather>({
     cod: 404,
     name: '',
@@ -37,6 +38,7 @@ function Container() {
       setValidate(false);
     } catch (error) {
       setValidate(true);
+      setLocNotFound('container-not-found');
     }
   };
 
@@ -46,7 +48,7 @@ function Container() {
   };
 
   return (
-    <div className={ style }>
+    <div className={ validate ? locNotFound : style }>
       <SearchBar
         onChange={ handleInputChange }
         onSubmit={ handleFormSubmit }
@@ -54,11 +56,7 @@ function Container() {
       {validate
         ? (
           <div
-            className="
-            container
-            weather-box
-            weather-details
-            not-found fadeIn"
+            className={ `${locNotFound} not-found fadeIn` }
           >
             <img src={ notFound } alt="Not Found 404" />
             <p>Opa! Localização inválida. Insira uma localização válida.</p>
