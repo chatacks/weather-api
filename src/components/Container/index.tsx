@@ -19,7 +19,7 @@ function Container() {
     },
     weather: [{
       description: '',
-      main: 'Clear' || 'Clouds' || 'Mist' || 'Rain' || 'Snow',
+      main: 'Clear' || 'Clouds' || 'Mist' || 'Rain' || 'Thunderstorm',
     }],
     wind: {
       speed: 0,
@@ -63,7 +63,7 @@ function Container() {
             className={ `${locNotFound} not-found fadeIn` }
           >
             <img src={ notFound } alt="Not Found 404" />
-            <p>Opa! Localização inválida. Insira uma localização válida.</p>
+            <p>Opa! Localização inválida. Insira uma localização válida...</p>
           </div>)
         : <WeatherBox
             data={ dataWeather }

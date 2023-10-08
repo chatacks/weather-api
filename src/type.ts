@@ -1,4 +1,4 @@
-type IconType = 'Clear' | 'Clouds' | 'Mist' | 'Rain' | 'Snow';
+type IconType = 'Clear' | 'Clouds' | 'Mist' | 'Rain' | 'Thunderstorm';
 
 export type ObjectWeather = {
   cod: number;
