@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ObjectWeather } from '../../type';
 import SearchBar from '../SearchBar';
 import WeatherBox from '../WeatherBox';
@@ -11,7 +11,7 @@ function Container() {
   const [validate, setValidate] = useState(false);
   const [locNotFound, setLocNotFound] = useState('');
   const [dataWeather, setDataWeather] = useState<ObjectWeather>({
-    cod: 404,
+    cod: 0,
     name: '',
     main: {
       humidity: 0,
@@ -41,6 +41,10 @@ function Container() {
       setLocNotFound('container-not-found');
     }
   };
+
+  useEffect(() => {
+    sessionStorage.setItem('weather', JSON.stringify(dataWeather));
+  }, [dataWeather]);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
