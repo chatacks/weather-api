@@ -47,12 +47,12 @@ Ao abrir o aplicativo, você verá uma barra de pesquisa. Para buscar a previsã
 
 A previsão do tempo será exibida na seguinte formatação:
 
-- Data: 2023-10-05
-- Cidade: São Paulo, BR
-- Temperatura: 25 °C
-- Umidade: 75%
-- Vento: 10 km/h
-- Condições do céu: Sol
+- Date: 2023-10-05
+- City: São Paulo, BR
+- Temperature: 25 °C
+- Humidity: 75%
+- Wind: 10 km/h
+- Description: Clouds, Rain etcs...
 
 ## Autor
 
