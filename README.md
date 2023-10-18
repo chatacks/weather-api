@@ -8,8 +8,8 @@ Este é um aplicativo de clima desenvolvido usando ReactJS, TypeScript e a API O
 
 - ReactJS
 - TypeScript
-- Styled Components
 - OpenWeatherMap API
+- HTML
 - CSS
 
 ## Desafios do projeto
