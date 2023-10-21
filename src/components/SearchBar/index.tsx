@@ -13,6 +13,7 @@ function SearchBar({ onChange, onSubmit }: SearchBarProps) {
         <FaLocationDot className="icon-dot-location" />
         <form onSubmit={ onSubmit }>
           <input
+            data-testid="input-search"
             onChange={ onChange }
             type="text"
             placeholder="Digite sua localização"
