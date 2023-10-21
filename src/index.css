@@ -199,13 +199,6 @@ body {
   opacity: 0;
 }
 
-.error {
-  color: #ff0000;
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 12px;
-}
-
 .fadeIn {
   animation: 0.5s fadeIn forwards;
   animation-delay: 0.5s;

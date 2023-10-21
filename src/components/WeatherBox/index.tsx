@@ -15,11 +15,11 @@ function WeatherBox({ data }: WeatherBoxProps) {
   return (
     <>
       <div className="weather-box fadeIn">
-        {weather && <img src={ icons[main] } alt="" />}
+        {weather && <img src={ icons[main] } alt={ main } />}
         <p className="temperature">
           {`${data.main.temp} °C`}
         </p>
-        <p className="description">{data.weather[0].main}</p>
+        <p className="description">{(data.weather[0].main)}</p>
       </div>
 
       <div className="weather-details fadeIn">
