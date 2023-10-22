@@ -1,4 +1,6 @@
-const city = {
+import { ObjectWeather } from '../type';
+
+const city: ObjectWeather = {
   cod: 200,
   name: 'Rio de Janeiro',
   main: {

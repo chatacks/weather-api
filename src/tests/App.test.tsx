@@ -8,6 +8,8 @@ import city from '../mocks/city';
 
 afterEach(() => vi.clearAllMocks());
 
+const rio = 'Rio de Janeiro';
+
 describe('Verifica componente <App />', () => {
   it('Verifica se o componente renderiza um input', () => {
     render(<App />);
@@ -23,9 +25,9 @@ describe('Verifica componente <App />', () => {
     const user = userEvent.setup();
     const input = screen.getByTestId(/input-search/i);
 
-    await user.type(input, 'Rio de Janeiro');
+    await user.type(input, rio);
 
-    expect(input).toHaveValue('Rio de Janeiro');
+    expect(input).toHaveValue(rio);
   });
 
   it('Verifica se o componente renderiza um botão', () => {
@@ -54,7 +56,7 @@ describe('Verifica componente <App />', () => {
     const input = screen.getByTestId(/input-search/i);
     const button = screen.getByTestId(/button-search/i);
 
-    await user.type(input, 'Rio de Janeiro');
+    await user.type(input, rio);
     await user.click(button);
 
     expect(mockFetch).toBeCalled();
