@@ -19,7 +19,7 @@ function SearchBar({ onChange, onSubmit }: SearchBarProps) {
             placeholder="Digite sua localização"
           />
           <button>
-            <BiSearchAlt2 />
+            <BiSearchAlt2 data-testid="button-search" />
           </button>
         </form>
       </div>
