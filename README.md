@@ -1,63 +1,80 @@
-# Weather API
-
-## Descrição
+# Weather App
 
 Este é um aplicativo de clima desenvolvido usando ReactJS, TypeScript e a API OpenWeatherMap. O aplicativo permite que os usuários vejam a previsão do tempo para sua localização atual ou para qualquer outra cidade do mundo.
 
-## Tecnologias usadas
+## Visão Geral
 
-- ReactJS
-- TypeScript
-- OpenWeatherMap API
-- HTML
-- CSS
+O Weather App fornece informações detalhadas sobre o clima, incluindo temperatura, condições meteorológicas e previsões para diferentes localidades. Os usuários podem buscar pelo clima em sua cidade atual ou em qualquer cidade ao redor do mundo, proporcionando uma visão clara e útil das condições climáticas.
 
-## Desafios do projeto
+## Funcionalidades
 
-- Implementar a funcionalidade de busca de cidades
-- Exibir a previsão do tempo atual
-- Exibir informações como temperatura, umidade, vento e condições do céu
-- Utilizar uma API de previsão do tempo
+- **Previsão do Tempo Atual**: Exibe a condição meteorológica atual para a localização do usuário ou para uma cidade especificada.
+- **Previsão para Cidades em Todo o Mundo**: Permite que os usuários busquem e visualizem o clima para qualquer cidade global.
+- **Interface Intuitiva**: Design responsivo e fácil de usar para uma melhor experiência do usuário.
+- **Testes Automatizados**: Inclui testes usando React Testing Library para garantir a qualidade e confiabilidade da aplicação.
 
-## Pré-requisitos
+## Tecnologias Utilizadas
 
-- Git
-- Node.js
-- Um editor de código, como o Visual Studio Code
+- **Framework**: ReactJS
+- **Linguagem**: TypeScript
+- **API**: OpenWeatherMap API (para obter dados meteorológicos)
+- **Estilização**: HTML e CSS
+- **Testes**: React Testing Library
 
-## Como rodar o projeto
+## Como Executar o Projeto
 
-1. Clone o repositório:
-git clone git@github.com:chatacks/weather-api.git
+1. **Clone este repositório**:
 
-2. Acesse a pasta do projeto:
-cd weather-api
+   ```bash
+   git clone git@github.com:chatacks/weather-api.git
+   cd weather-api
+   ```
 
-3. Instale as dependências:
-npm install
+2. **Instale as dependências**:
 
-4. Execute o servidor:
-npm run dev
+   ```bash
+   npm install
+   ```
 
-O servidor iniciará na porta 3000. Acesse o aplicativo em [http://localhost:3000](http://localhost:3000).
+3. **Configure a API**:
 
-## Exemplo de uso
+   - Crie uma conta no [OpenWeatherMap](https://openweathermap.org/) e obtenha uma chave de API.
+   - Adicione sua chave de API ao arquivo de configuração `.env` na raiz do projeto (crie o arquivo se não existir). Por exemplo:
+     ```
+     REACT_APP_OPENWEATHERMAP_API_KEY=your_api_key_here
+     ```
 
-Ao abrir o aplicativo, você verá uma barra de pesquisa. Para buscar a previsão do tempo de uma cidade, digite o nome da mesma na caixa de pesquisa e pressione Enter.
+4. **Inicie a aplicação**:
 
-A previsão do tempo será exibida na seguinte formatação:
+   ```bash
+   npm run dev || npm start
+   ```
 
-- Date: 2023-10-05
-- City: São Paulo, BR
-- Temperature: 25 °C
-- Humidity: 75%
-- Wind: 10 km/h
-- Description: Clouds, Rain etcs...
+5. **Acesse a aplicação**:
 
-## Autor
+   Abra o navegador e vá para `http://localhost:3000` para visualizar a aplicação de clima.
 
-Thyago Chatack
+## Testes
+
+Para executar os testes da aplicação, utilize o seguinte comando:
+
+```bash
+npm test
+```
+
+Os testes garantem que os componentes e funcionalidades principais da aplicação estejam funcionando corretamente.
+
+## Contribuição
+
+Contribuições são bem-vindas! Você pode abrir issues para relatar problemas ou sugerir melhorias. Pull requests também são apreciados.
 
 ## Licença
 
-O projeto é licenciado sob a licença MIT.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Referências
+
+- [Documentação do React](https://reactjs.org/)
+- [Documentação do TypeScript](https://www.typescriptlang.org/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [Documentação do React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
